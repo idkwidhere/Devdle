@@ -45,7 +45,7 @@ const useDevdle = (dailyWord) => {
     const pushGuess = (frmtdGuess) => {
        if(cGuess === dailyWord){
         setCorrect(true)
-        console.log("You win!");
+        console.log("You win maybe!");
        }
 
        setGuesses((pGuesses) => {

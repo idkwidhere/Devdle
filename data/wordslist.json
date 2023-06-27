@@ -1,0 +1,13 @@
+{
+    "dailywords": [
+        {"word": "worda", "id":0},
+        {"word": "wordb", "id":1},
+        {"word": "wordc", "id":2},
+        {"word": "wordd", "id":3},
+        {"word": "worde", "id":4},
+        {"word": "wordf", "id":5},
+        {"word": "wordg", "id":6},
+        {"word": "wordh", "id":7},
+        {"word": "wordi", "id":8}
+    ]
+}

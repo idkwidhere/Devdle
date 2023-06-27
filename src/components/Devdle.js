@@ -23,6 +23,7 @@ export default function Devdle({ dailyWord }){
             <DevdleGrid cGuess={cGuess} guesses={guesses} turn={turn}/>
             <div>{dailyWord}</div>
             <div>{cGuess}</div>
+            
         </div>
         
     )

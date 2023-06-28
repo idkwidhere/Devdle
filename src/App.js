@@ -6,7 +6,7 @@ function App() {
   const [dailyWord, setDailyWord] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/dailywords')
+    fetch('https://codemeaaron.com/wordslist.json/dailywords')
     .then(res => res.json())
     .then(json => {
       // random int between 0 and end of list

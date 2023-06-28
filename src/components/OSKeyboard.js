@@ -4,7 +4,7 @@ export default function OSKeyboard({ keyStatus }) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3001/letters')
+    fetch('https://codemeaaron.com/wordslist.json/letters')
     .then(res => res.json())
     .then(json => {
         setLetters(json)

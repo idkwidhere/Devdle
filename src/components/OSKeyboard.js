@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function OSKeyboard() {
+export default function OSKeyboard({ keyStatus }) {
   const [letters, setLetters] = useState(null)
 
   useEffect(() => {
@@ -11,13 +11,19 @@ export default function OSKeyboard() {
     })
   }, [])
 
+//   console.log(letters)
     return (
-    <div className={`w-max-[500px] m-[20px]`}>
-        {letters && letters.map((l) => {
+    <div className={`inline-block max-w-[500px] m-[20px] `}>
+        {letters && letters?.map((l) => {
+            // const color = keyStatus[l.key]
+            // console.log(color)
+
         return(
             <div key={l.key}
-            className='m-[5px] w-[40px] h-[50px] inline-block rounded-md bg-[#eee] leading-[50px]'
-            > {l.key} </div>
+            className={`m-[5px] w-[40px] h-[50px] inline-block rounded-md bg-[#eee] leading-[50px] `}
+            >
+                 {l.key} 
+            </div>
         )
     })}
     </div>

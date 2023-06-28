@@ -7,6 +7,7 @@ const useDevdle = (dailyWord) => {
     const [guesses, setGuesses] = useState([...Array(6)])
     const [previous, setPrevious] = useState([])
     const [correct, setCorrect] = useState(false)
+    const [keyStatus, setKeyStatus] = useState({})
 
     // format the guess into array
     
@@ -60,6 +61,32 @@ const useDevdle = (dailyWord) => {
         return prevTurn + 1
        })
 
+       // update keyboard
+       setKeyStatus((prevKeyStatus) => {
+        let newKeys = {...prevKeyStatus}
+        // console.log(newKeys)
+        frmtdGuess.forEach((l) => {
+            const currentColor = newKeys[l.key]
+            // console.log(currentColor)
+
+            if(l.color === 'green'){
+                newKeys[l.key] = 'green'
+                return
+            }
+            if(l.color === 'yellow' && currentColor !== "green"){
+                newKeys[l.key] = 'yellow'
+                return
+            }
+            if(l.color === 'grey' && currentColor !== 'green' && currentColor !== 'yellow'){
+                newKeys[l.key] = 'grey'
+                return
+            }
+            return newKeys
+        })
+
+       })
+
+
        setCGuess('')
     }
 
@@ -109,7 +136,7 @@ const useDevdle = (dailyWord) => {
         
     }
 
-    return {turn, cGuess, guesses, previous, correct, handleKeys}
+    return {turn, cGuess, guesses, previous, correct, keyStatus, handleKeys}
 
 }
 

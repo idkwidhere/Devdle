@@ -12,22 +12,26 @@ export default function Devdle({ dailyWord }){
 
     useEffect(() => {
         window.addEventListener('keyup', handleKeys)
-        
-        let playerData = {
+
+        let defPlayerData = {
             "plays": 0,
             "dailyStreak": 0,
             "winStreak": 0,
             "wins": 0,
             "losses": 0,
             "time": 0
-
+      
+        }
+      
+        var preFlight = JSON.parse(localStorage.getItem("playerData"))
+        if(!preFlight){
+          localStorage.setItem("playerData", JSON.stringify(defPlayerData))
         }
 
-        
+        let playerData = preFlight
 
         // console.log(checkData)
-    
-       if(JSON.parse(localStorage.getItem("playerData")).time !== 0){
+       if(playerData.time === 1){
         window.removeEventListener('keyup', handleKeys)
         setTimeout(() => setShowWinLose(true), 200)
        }
@@ -35,27 +39,31 @@ export default function Devdle({ dailyWord }){
         if(correct){ //set after win stuff here
             
 
-            window.removeEventListener('keyup', handleKeys)
-            setTimeout(() => setShowWinLose(true), 1500)
-            playerData.wins ++
-            playerData.dailyStreak ++
+            
+            playerData.wins ++ 
+            playerData.dailyStreak ++ 
             playerData.winStreak ++
             playerData.plays ++
             playerData.time = 1
             localStorage.setItem("playerData", JSON.stringify(playerData))
-            
+            window.removeEventListener('keyup', handleKeys)
+            setTimeout(() => setShowWinLose(true), 1500)
+            return
         }
+        console.log(turn)
 
         if(turn > 5){ // set lose stuff here
             
-            window.removeEventListener('keyup', handleKeys)
-            setTimeout(() => setShowWinLose(true), 1500)
-            playerData.losses ++
-            playerData.dailyStreak ++
+            
+            playerData.losses += 1
+            playerData.dailyStreak += 1
             playerData.winStreak = 0
-            playerData.plays ++
+            playerData.plays += 1
             playerData.time = 1
             localStorage.setItem("playerData", JSON.stringify(playerData))
+            window.removeEventListener('keyup', handleKeys)
+            setTimeout(() => setShowWinLose(true), 1500)
+            return
         }
 
         return () => window.removeEventListener('keyup', handleKeys)

@@ -10,18 +10,31 @@ function App() {
     .then(res => res.json())
     .then(json => {
       // random int between 0 and end of list
-      const randomWord = json[Math.floor(Math.random()*json.length)]
+      const randomWord = json[Math.floor(Math.random()*json.length)] //picks word for the session not day
       setDailyWord(randomWord.word)
     })
     .catch(e => {console.log(e)})
   }, [setDailyWord])
 
+    let defPlayerData = {
+      "plays": 0,
+      "dailyStreak": 0,
+      "winStreak": 0,
+      "wins": 0,
+      "losses": 0,
+      "time": 0
 
+  }
+
+  var preFlight = JSON.parse(localStorage.getItem("playerData"))
+  if(!preFlight){
+    localStorage.setItem("playerData", JSON.stringify(defPlayerData))
+  }
 
   return (
     <div className="App text-center">
-      <h1 className="text-[5vh] p-[20px] font-semibold m-0 mb-[30px] border-b-2 border-b-cyan-500 ">_Devdle</h1>
-      {dailyWord && <Devdle dailyWord={dailyWord}/>}
+      <h1 className="text-[5vh] p-[20px] font-semibold m-0 mb-[30px] border-b-2 border-b-cyan-500 "><span className="animate-pulse">_</span>Devdle</h1>
+      {dailyWord && <Devdle dailyWord={dailyWord} />}
     </div>
   );
 }

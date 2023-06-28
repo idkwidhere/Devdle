@@ -4,5 +4,6 @@ FIXED:
     Currently fixed time lockout for daily game.
 
 TODO: 
-    Add actual words and their descriptions.
+    Fix double adding score.
+    Add descriptions to words?
     Fix keyboard coloring. Props of undefined error.

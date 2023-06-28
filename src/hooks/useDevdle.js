@@ -8,7 +8,8 @@ const useDevdle = (dailyWord) => {
     const [previous, setPrevious] = useState([])
     const [correct, setCorrect] = useState(false)
     const [keyStatus, setKeyStatus] = useState({})
-
+    
+    
     // format the guess into array
     
     const frmtGuess = () => {

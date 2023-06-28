@@ -13,6 +13,7 @@ function App() {
       const randomWord = json[Math.floor(Math.random()*json.length)]
       setDailyWord(randomWord.word)
     })
+    .catch(e => {console.log(e)})
   }, [setDailyWord])
 
 

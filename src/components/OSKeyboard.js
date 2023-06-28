@@ -9,6 +9,7 @@ export default function OSKeyboard({ keyStatus }) {
     .then(json => {
         setLetters(json)
     })
+    .catch(e => {console.log(e)})
   }, [])
 
 //   console.log(letters)

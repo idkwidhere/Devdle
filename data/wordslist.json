@@ -1,14 +1,23 @@
 {
     "dailywords": [
-        {"word": "worda", "id":0},
-        {"word": "wordb", "id":1},
-        {"word": "wordc", "id":2},
-        {"word": "wordd", "id":3},
-        {"word": "worde", "id":4},
-        {"word": "wordf", "id":5},
-        {"word": "wordg", "id":6},
-        {"word": "wordh", "id":7},
-        {"word": "wordi", "id":8}
+        { "id": 0, "word": "Codes" },
+        { "id": 1, "word": "Debug" },
+        { "id": 2, "word": "Error" },
+        { "id": 3, "word": "Input" },
+        { "id": 4, "word": "Logic" },
+        { "id": 5, "word": "Queue" },
+        { "id": 6, "word": "Stack" },
+        { "id": 7, "word": "While" },
+        { "id": 8, "word": "Break" },
+        { "id": 9, "word": "Catch" },
+        { "id": 10, "word": "Float" },
+        { "id": 11, "word": "Scope" },
+        { "id": 12, "word": "False" },
+        { "id": 13, "word": "Regex" },
+        { "id": 14, "word": "Index" },
+        { "id": 15, "word": "Yield" },
+        { "id": 16, "word": "Class" },
+        { "id": 17, "word": "Array" }
     ],
 
     "letters":[

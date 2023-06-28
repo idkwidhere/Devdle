@@ -29,12 +29,11 @@ export default function Devdle({ dailyWord }){
         }
 
         let playerData = preFlight
-
         // console.log(checkData)
-       if(playerData.time === 1){
-        window.removeEventListener('keyup', handleKeys)
-        setTimeout(() => setShowWinLose(true), 200)
-       }
+    //    if(playerData.time === 1){
+    //     window.removeEventListener('keyup', handleKeys)
+    //     setTimeout(() => setShowWinLose(true), 200)
+    //    }
 
         if(correct){ //set after win stuff here
             
@@ -44,7 +43,7 @@ export default function Devdle({ dailyWord }){
             playerData.dailyStreak ++ 
             playerData.winStreak ++
             playerData.plays ++
-            playerData.time = 1
+            playerData.time = new Date().getTime()
             localStorage.setItem("playerData", JSON.stringify(playerData))
             window.removeEventListener('keyup', handleKeys)
             setTimeout(() => setShowWinLose(true), 1500)
@@ -59,7 +58,7 @@ export default function Devdle({ dailyWord }){
             playerData.dailyStreak += 1
             playerData.winStreak = 0
             playerData.plays += 1
-            playerData.time = 1
+            playerData.time = new Date().getTime()
             localStorage.setItem("playerData", JSON.stringify(playerData))
             window.removeEventListener('keyup', handleKeys)
             setTimeout(() => setShowWinLose(true), 1500)

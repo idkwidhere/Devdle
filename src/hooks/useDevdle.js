@@ -20,7 +20,7 @@ const useDevdle = (dailyWord) => {
 
         //find greens
         frmtdGuess.forEach((letter, i) => {
-            if(dailyWordArray[i] === letter){
+            if(dailyWordArray[i] === letter.key){
                 frmtdGuess[i].color = 'green'
                 dailyWordArray[i] = null
             }
@@ -87,7 +87,7 @@ const useDevdle = (dailyWord) => {
                 return
             }
 
-            if(cGuess.length != 5){
+            if(cGuess.length !== 5){
                 console.log("Can't.");
                 return
             }

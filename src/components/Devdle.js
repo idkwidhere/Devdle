@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import useDevdle from '../hooks/useDevdle'
 import DevdleGrid from './DevdleGrid'
+import OSKeyboard from './OSKeyboard'
 
 export default function Devdle({ dailyWord }){
 
@@ -22,7 +23,8 @@ export default function Devdle({ dailyWord }){
         <div>
             <DevdleGrid cGuess={cGuess} guesses={guesses} turn={turn}/>
             <div>{dailyWord}</div>
-            <div>{cGuess}</div>
+            <OSKeyboard />
+            {/* <div>{cGuess}</div> */}
             
         </div>
         

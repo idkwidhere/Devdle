@@ -11,7 +11,7 @@ const useDevdle = (dailyWord) => {
     // format the guess into array
     
     const frmtGuess = () => {
-        console.log("Formatting your guess: ", cGuess);
+        // console.log("Formatting your guess: ", cGuess);
 
         let dailyWordArray = [...dailyWord]
         let frmtdGuess = [...cGuess].map((letter) => {
@@ -45,7 +45,7 @@ const useDevdle = (dailyWord) => {
     const pushGuess = (frmtdGuess) => {
        if(cGuess === dailyWord){
         setCorrect(true)
-        console.log("You win maybe!");
+        // console.log("You win maybe!");
        }
 
        setGuesses((pGuesses) => {
@@ -83,12 +83,12 @@ const useDevdle = (dailyWord) => {
             }
 
             if(previous.includes(cGuess)){
-                console.log("You already tried that!")
+                // console.log("You already tried that!")
                 return
             }
 
             if(cGuess.length !== 5){
-                console.log("Can't.");
+                // console.log("Can't.");
                 return
             }
 

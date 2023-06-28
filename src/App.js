@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App text-center">
-      <h1 className="text-[1.2em] p-[20px] font-veranda m-0 mb-[30px] border-b-2 border-b-red-600 bg-[#333]">Devdle</h1>
+      <h1 className="text-[5vh] p-[20px] font-semibold m-0 mb-[30px] border-b-2 border-b-cyan-500 ">_Devdle</h1>
       {dailyWord && <Devdle dailyWord={dailyWord}/>}
     </div>
   );

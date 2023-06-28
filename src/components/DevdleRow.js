@@ -7,8 +7,8 @@ export default function DevdleRow( { guess, cGuess } ) {
             <div className="text-center flex justify-center">
                 {guess.map((letter, i) => (
                     <div className={`  block w-[60px] h-[60px] border-2 border-gray-700 m-1 text-center leading-[60px] uppercase text-[2.5em] font-bold
-                    ${letter.color === "green" ? 'border-green-500 bg-green-500' : null} ${letter.color === "yellow" ? 'bg-yellow-300': null}
-                    ${letter.color === "grey" ? 'bg-gray-500' : null}`
+                    ${letter.color === "green" ? ' animate-reveal-correct border-[#19b319]' : null} ${letter.color === "yellow" ? ' border-[#fccf03] animate-reveal-close': null}
+                    ${letter.color === "grey" ? 'animate-reveal-wrong' : null}   `
                 }
                     key={i}>
                         {letter.key}
@@ -21,14 +21,16 @@ export default function DevdleRow( { guess, cGuess } ) {
 
     if(cGuess){
         let letters = cGuess.split('')
+
         return(
-            <div className={ `${cGuess===true ? 'text-center flex justify-center' : null} `}>
+            <div className={ ` text-center flex justify-center `}>
                 {letters.map((letter, i) => (
-                    <div key={i} className={``}>{letter}</div>
+                    <div key={i} className={`block w-[60px] h-[60px] border-2 border-gray-700 m-1 text-center leading-[60px] uppercase text-[2.5em] font-bold animate-bounce`}>{letter}</div>
                 ))}
-                {[...Array(5-letters.length)].map((v, i)=>(
-                    <div key={i}></div>
+                {[...Array(5 - letters.length)].map((_, i)=>(
+                    <div key={i} className='block w-[60px] h-[60px] border-2 border-gray-700 m-1 text-center leading-[60px] uppercase text-[2.5em] font-bold'></div>
                 ))}
+                
             </div>
         )
     }
